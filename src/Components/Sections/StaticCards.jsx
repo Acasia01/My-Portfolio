@@ -55,7 +55,7 @@ export default ProfileAvatar;
 export const AboutCard = () => (
   <BentoCard id="about" className="col-span-2 row-span-2 about-card-modern">
     <h2 className="about-title-modern font-script" style={{ fontSize: '2.5rem', fontWeight: 'normal', textTransform: 'none', letterSpacing: 'normal', lineHeight: 1.2, color: "#f5a623" }}>
-      Hello, I'm Renuka !
+      Hi, I'm Renuka
     </h2>
     <p className="about-desc-modern">
       Full-Stack Web Developer proficient in MERN and Django frameworks. Adept at translating complex data into scalable, responsive web applications, with hands-on experience designing comprehensive product portals and optimizing backend architecture.
