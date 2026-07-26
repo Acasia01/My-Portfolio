@@ -4,6 +4,32 @@ import { Github } from '../UI/CustomIcons';
 import BentoCard from '../UI/BentoCard';
 import { projects } from '../../data/portfolioData';
 
+const projectImageCaptions = {
+  "Project Management Tool": [
+    "Application Homepage",
+    "Main Metrics Dashboard",
+    "Interactive Kanban Board",
+    "Team Management Panel",
+    "Calendar & Schedules View",
+    "Gantt Chart Project Timeline",
+    "Recent Activities Audit Log",
+    "Analytical Reports Section",
+    "Real-time Notification Center",
+    "System Settings & Admin Console"
+  ],
+  "Restu India | Hospital Furniture Website": [
+    "Hospital Furniture Admin Dashboard",
+    "Dynamic Product Catalog Page"
+  ],
+  "Celestia | E-commerce Platform": [
+    "E-Commerce Landing Page",
+    "Shop Collections Page",
+    "Product Grid & Search Filters",
+    "Shop Collections Categories Grid",
+    "About Us Details Section"
+  ]
+};
+
 export default function ProjectsCard() {
   const [activeProject, setActiveProject] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,12 +69,19 @@ export default function ProjectsCard() {
       </div>
       <div className="project-carousel">
         <div className="project-slide">
-          <div className="project-image-wrapper">
-            <img
-              src={currentImageSrc}
-              alt={currentProject.title}
-              style={{ transition: 'opacity 0.5s ease', width: '100%', height: '100%', objectFit: 'contain' }}
-            />
+          <div className="project-image-container">
+            <div className="project-image-wrapper">
+              <img
+                src={currentImageSrc}
+                alt={currentProject.title}
+                style={{ transition: 'opacity 0.5s ease', width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+            </div>
+            {projectImageCaptions[currentProject.title] && (
+              <div className="project-image-caption">
+                {projectImageCaptions[currentProject.title][currentImageIndex] || "Feature View"}
+              </div>
+            )}
           </div>
           <div className="project-info">
             <div className="project-meta">

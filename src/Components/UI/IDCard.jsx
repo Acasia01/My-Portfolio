@@ -69,7 +69,7 @@ const IDCard = () => {
           <div className="id-card-header-curve"></div>
         </div>
         <div className="id-card-profile">
-          <img src="/profile_pic.jpeg" alt="Profile" />
+          <img src="/profile_pic.png" alt="Profile" />
         </div>
         <div className="id-card-body">
           <h2 className="id-card-name">RENUKA</h2>

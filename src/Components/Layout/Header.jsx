@@ -2,11 +2,16 @@ import { scrollToSection } from "../../Utils/helpers";
 import { Download } from "lucide-react";
 import resumeFile from "../../../public/resume.pdf";
 import IDCard from "../UI/IDCard";
+
 export default function Header() {
   return (
     <header className="app-header">
       <div className="header-left">
-        <div className="logo logo-modern" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ position: 'relative', width: '80px', height: '60px' }}>
+        <div
+          className="logo logo-modern"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{ position: 'relative', width: '80px', height: '60px' }}
+        >
           <IDCard />
         </div>
 

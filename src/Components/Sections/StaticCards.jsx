@@ -14,7 +14,7 @@ const ProfileAvatar = ({ avatarImg }) => {
     setShowBadges((prev) => !prev);
   };
 
-  const profilePic = "/profile_pic.jpeg";
+  const profilePic = "/profile_pic.png";
 
   return (
     <div className="profile-avatar-container-modern">
@@ -54,7 +54,7 @@ export default ProfileAvatar;
 // 2. About Card
 export const AboutCard = () => (
   <BentoCard id="about" className="col-span-2 row-span-2 about-card-modern">
-    <h2 className="about-title-modern font-script" style={{ fontSize: '2.5rem', fontWeight: 'normal', textTransform: 'none', letterSpacing: 'normal', lineHeight: 1.2 , color: "#f5a623"  }}>
+    <h2 className="about-title-modern font-script" style={{ fontSize: '2.5rem', fontWeight: 'normal', textTransform: 'none', letterSpacing: 'normal', lineHeight: 1.2, color: "#f5a623" }}>
       Hello, I'm Renuka !
     </h2>
     <p className="about-desc-modern">
@@ -62,10 +62,13 @@ export const AboutCard = () => (
     </p>
     <a href="https://www.linkedin.com/in/renuka-dhoundiyal01/" target="_blank" rel="noopener noreferrer" className="link-pill-modern">
       <span className="link-pill-icon-modern">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
+        <img
+          src="https://img.icons8.com/color/48/search--v1.png"
+          alt="Search"
+          width="16"
+          height="16"
+          style={{ display: 'inline-block', verticalAlign: 'middle' }}
+        />
       </span>
       LinkedIn
     </a>
@@ -73,18 +76,62 @@ export const AboutCard = () => (
 );
 
 // 3. Profile Card
-export const ProfileCard = () => (
-  <BentoCard className="col-span-2 row-span-2 profile-card-modern">
-    <ProfileAvatar avatarImg={avatarImg} />
-    <div className="contact-panel-modern">
-      <h4 className="contact-panel-title-modern">Contact</h4>
-      <ul className="contact-panel-list-modern">
-        <li className="contact-panel-item-modern"><MapPin size={14} /> New Delhi, India</li>
-        <li className="contact-panel-item-modern"><Mail size={14} /> acasiadl01@gmail.com</li>
-      </ul>
-    </div>
-  </BentoCard>
-);
+export const ProfileCard = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText("acasiadl01@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <BentoCard className="col-span-2 row-span-2 profile-card-modern">
+      <ProfileAvatar avatarImg={avatarImg} />
+      <div className="contact-panel-modern">
+        <h4 className="contact-panel-title-modern">Contact</h4>
+        <ul className="contact-panel-list-modern">
+          <li className="contact-panel-item-modern"><MapPin size={14} /> New Delhi, India</li>
+          <li className="contact-panel-item-modern" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <Mail size={14} />
+            <a href="mailto:acasiadl01@gmail.com" className="contact-email-link" style={{ color: 'inherit', textDecoration: 'none' }}>
+              acasiadl01@gmail.com
+            </a>
+            <button
+              onClick={handleCopyEmail}
+              aria-label="Copy email address"
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '0.2rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                color: copied ? '#4ade80' : 'var(--text-muted)',
+                transition: 'color 0.2s',
+                marginLeft: 'auto'
+              }}
+            >
+              {copied ? (
+                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#4ade80' }}>Copied!</span>
+              ) : (
+                <img
+                  src="https://img.icons8.com/color/48/copy.png"
+                  alt="Copy"
+                  width="14"
+                  height="14"
+                  style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                />
+              )}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </BentoCard>
+  );
+};
 
 // 4. Skills Card
 export const SkillsCard = () => {
@@ -99,7 +146,7 @@ export const SkillsCard = () => {
       title: "Backend",
       type: "backend",
       icon: <Server size={16} />,
-      skills: ["Node.js", "Express.js", "Django (Python)"]
+      skills: ["Node.js", "Express.js", "Django (Python)", "MongoDB"]
     },
     {
       title: "Databases",
@@ -108,10 +155,10 @@ export const SkillsCard = () => {
       skills: ["MongoDB", "SQL", "SQLite", "BigQuery"]
     },
     {
-      title: "Tools & Deploy",
+      title: "Tools",
       type: "tools",
       icon: <Wrench size={16} />,
-      skills: ["Git", "GitHub", "Railway", "Hostinger"]
+      skills: ["Git", "GitHub", "VS Code", "Railway"]
     }
   ];
 
@@ -150,7 +197,7 @@ export const SkillsCard = () => {
 // 5. Experience Card
 export const ExperienceCard = () => (
   <BentoCard id="work" className="col-span-4 row-span-1 experience-card">
-    <h3 className="card-title"><Briefcase size={20} style={{ color: "#f5a623" }}/> Work Experience</h3>
+    <h3 className="card-title"><Briefcase size={20} style={{ color: "#f5a623" }} /> Work Experience</h3>
     <div className="experience-timeline-horizontal">
       <div className="experience-item">
         <div className="exp-header">
@@ -158,11 +205,12 @@ export const ExperienceCard = () => (
           <span className="exp-date">Dec 2025 - Present</span>
         </div>
         <div className="exp-company">Go Delivery Pvt Ltd</div>
-        <p className="exp-desc">Managed complex internal databases and ensured data integrity for transaction tracking.</p>
+        <p className="exp-desc">Managed and maintained large dataset </p>
+        <p className="exp-desc">Monitored and maintained transactional datasets to ensure accurate reporting and analysis.</p>
       </div>
       <div className="experience-item">
         <div className="exp-header">
-          <h4 className="exp-role">MIS Executive</h4>
+          <h4 className="exp-role">Data Analyst</h4>
           <span className="exp-date">Aug 2025 - Dec 2025</span>
         </div>
         <div className="exp-company">Unisoft Healthcare Pvt Ltd</div>
@@ -187,7 +235,7 @@ export const EducationAndCertificationsCard = () => (
       {/* Education Section */}
       <div className="education-section-block">
         <h3 className="card-title" style={{ marginBottom: '1.25rem' }}>
-          <GraduationCap size={20} style={{ color: "#f5a623" }}/> Education
+          <GraduationCap size={20} style={{ color: "#f5a623" }} /> Education
         </h3>
         <div className="education-list-modern">
           <div className="education-item-modern">

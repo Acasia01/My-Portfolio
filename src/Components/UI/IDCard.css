@@ -179,3 +179,9 @@
   border-top-right-radius: 50%;
   border-top: 3px solid #00D2D3;
 }
+
+@media (max-width: 768px) {
+  .id-card-container {
+    display: none !important;
+  }
+}

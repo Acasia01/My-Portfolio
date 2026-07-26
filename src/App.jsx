@@ -8,7 +8,6 @@ import {
   SkillsCard,
   ExperienceCard,
   EducationAndCertificationsCard,
-  ResumeLinksCard
 } from "./Components/Sections/StaticCards";
 
 export default function App() {
