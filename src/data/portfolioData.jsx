@@ -22,7 +22,7 @@ export const projects = [
   {
     title: "Project Management Tool",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Git", "Hostinger"],
-    desc: "Engineered a full-stack project management platform to streamline task delegation, sprint planning, and cross-functional team collaboration using Agile methodologies. Developed interactive, real-time dashboards to track project lifecycles and key metrics, reducing task reporting time by roughly 30% by translating complex backend data into intuitive visual reports.",
+    desc: "Engineered a full-stack Agile project management platform to streamline task delegation, sprint planning, and cross-functional collaboration. Developed real-time interactive dashboards to track key project metrics, cutting reporting time by 30% through intuitive data visualization.",
     image: [pmHomepage, pmDashboard, pmProject, pmTeam, pmCalender, pmGantt, pmActivity, pmReports, pmNotification, pmAdmin],
     liveLink: "https://github.com/Acasia01/Project-Management-Tool",
     githubLink: "https://github.com/Acasia01/Project-Management-Tool"
@@ -30,7 +30,7 @@ export const projects = [
   {
     title: "Restu India | Hospital Furniture Website",
     tech: ["Django", "React.js", "SQL", "Git", "Hostinger"],
-    desc: "Architected and deployed a fully responsive, full-stack web portal on Hostinger for a healthcare furniture provider, ensuring seamless navigation across a catalog of 150+ products. Engineered an automated quote generation system and dynamic product catalog, reducing manual quoting effort by approximately 40%, alongside a secure admin panel for backend data management.",
+    desc: "Architected and deployed a fully responsive healthcare furniture web portal on Hostinger, featuring a secure admin panel and a 150+ product catalog. Integrated an automated quote generation system that reduced manual quoting effort by roughly 40%.",
     image: [restuDashboard, restuProduct],
     liveLink: "https://www.resatuindia.com/",
     githubLink: "https://github.com/Acasia01/Restu_India"
