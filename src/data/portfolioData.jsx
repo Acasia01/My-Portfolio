@@ -18,7 +18,37 @@ import celestia3 from '../assets/Celestia/shop page 2.png';
 import celestia4 from '../assets/Celestia/category section.png';
 import celestia5 from '../assets/Celestia/about use.png';
 
+import bookingHomepage from '../assets/Booking System/Homepage.png';
+import bookingFleet from '../assets/Booking System/fleet page.png';
+import bookingVehicles from '../assets/Booking System/vechiles page.png';
+import bookingCustomerBookings from '../assets/Booking System/Customer Bookings.png';
+import bookingDetails from '../assets/Booking System/Booking Details page.png';
+import bookingHistory from '../assets/Booking System/Booking History.png';
+import bookingCustomerLedger from '../assets/Booking System/Cusetomer Legder.png';
+import bookingAdminBooking from '../assets/Booking System/Admin Booking page.png';
+import bookingAdminFleet from '../assets/Booking System/Admin Fleet page.png';
+import bookingFleetAdmin from '../assets/Booking System/fleet admin.png';
+
 export const projects = [
+  {
+    title: "Booking System",
+    tech: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "React Router", "Lucide React", "Git"],
+    desc: "A modern web application for managing reservations, handling availability schedules, and processing bookings efficiently. Features calendar scheduling, interactive booking forms, confirmation management, customer ledgers, and complete fleet management.",
+    image: [
+      bookingHomepage,
+      bookingFleet,
+      bookingVehicles,
+      bookingCustomerBookings,
+      bookingDetails,
+      bookingHistory,
+      bookingCustomerLedger,
+      bookingAdminBooking,
+      bookingAdminFleet,
+      bookingFleetAdmin
+    ],
+    liveLink: "https://github.com/Acasia01/Booking-System",
+    githubLink: "https://github.com/Acasia01/Booking-System"
+  },
   {
     title: "Project Management Tool",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Git", "Hostinger"],

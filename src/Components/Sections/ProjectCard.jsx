@@ -5,6 +5,18 @@ import BentoCard from '../UI/BentoCard';
 import { projects } from '../../data/portfolioData';
 
 const projectImageCaptions = {
+  "Booking System": [
+    "Application Homepage",
+    "Fleet Overview Page",
+    "Vehicles Catalog",
+    "Customer Bookings Dashboard",
+    "Reservation & Booking Details",
+    "Booking History Log",
+    "Customer Ledger & Transactions",
+    "Admin Booking Management",
+    "Admin Fleet Management Panel",
+    "Fleet Administration Dashboard"
+  ],
   "Project Management Tool": [
     "Application Homepage",
     "Main Metrics Dashboard",
