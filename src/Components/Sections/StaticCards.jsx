@@ -58,7 +58,7 @@ export const AboutCard = () => (
       Hi, I'm Renuka
     </h2>
     <p className="about-desc-modern">
-      Full-Stack Web Developer proficient in MERN and Django frameworks. Adept at translating complex data into scalable, responsive web applications, with hands-on experience designing comprehensive product portals and optimizing backend architecture.
+      Full Stack Developer skilled in React, Node.js, Django, and cloud deployment. Experienced across the full development lifecycle, transforming complex ideas into clean, scalable, and production-ready web applications.
     </p>
     <a href="https://www.linkedin.com/in/renuka-dhoundiyal01/" target="_blank" rel="noopener noreferrer" className="link-pill-modern">
       <span className="link-pill-icon-modern">
