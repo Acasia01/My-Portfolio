@@ -31,25 +31,6 @@ import bookingFleetAdmin from '../assets/Booking System/fleet admin.png';
 
 export const projects = [
   {
-    title: "Booking System",
-    tech: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "React Router", "Lucide React", "Git"],
-    desc: "A modern web application for managing reservations, handling availability schedules, and processing bookings efficiently. Features calendar scheduling, interactive booking forms, confirmation management, customer ledgers, and complete fleet management.",
-    image: [
-      bookingHomepage,
-      bookingFleet,
-      bookingVehicles,
-      bookingCustomerBookings,
-      bookingDetails,
-      bookingHistory,
-      bookingCustomerLedger,
-      bookingAdminBooking,
-      bookingAdminFleet,
-      bookingFleetAdmin
-    ],
-    liveLink: "https://github.com/Acasia01/Booking-System",
-    githubLink: "https://github.com/Acasia01/Booking-System"
-  },
-  {
     title: "Project Management Tool",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Git", "Hostinger"],
     desc: "Engineered a full-stack Agile project management platform to streamline task delegation, sprint planning, and cross-functional collaboration. Developed real-time interactive dashboards to track key project metrics, cutting reporting time by 30% through intuitive data visualization.",
@@ -72,6 +53,25 @@ export const projects = [
     image: [celestia1, celestia2, celestia3, celestia4, celestia5],
     liveLink: "https://github.com/Acasia01",
     githubLink: "https://github.com/Acasia01/Celestia"
+  },
+  {
+    title: "Booking System",
+    tech: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "React Router", "Lucide React", "Git"],
+    desc: "A modern web application for managing reservations, handling availability schedules, and processing bookings efficiently. Features calendar scheduling, interactive booking forms, confirmation management, customer ledgers, and complete fleet management.",
+    image: [
+      bookingHomepage,
+      bookingFleet,
+      bookingVehicles,
+      bookingCustomerBookings,
+      bookingDetails,
+      bookingHistory,
+      bookingCustomerLedger,
+      bookingAdminBooking,
+      bookingAdminFleet,
+      bookingFleetAdmin
+    ],
+    liveLink: "https://github.com/Acasia01/Booking-System",
+    githubLink: "https://github.com/Acasia01/Booking-System"
   }
 ];
 

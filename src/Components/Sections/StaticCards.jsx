@@ -1,13 +1,11 @@
-import { MapPin, Mail, Phone, Code, Server, Database, Wrench, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { MapPin, Mail, Code, Server, Database, Wrench, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { Github, Linkedin } from '../UI/CustomIcons';
 import BentoCard from '../UI/BentoCard';
 import { awards } from '../../data/portfolioData';
-import avatarImg from '../../assets/avatar.png';
-import skillsBgImg from '../../assets/skills-bg.png';
 import { useState } from 'react';
 
 // 1. Profile Avatar Component
-const ProfileAvatar = ({ avatarImg }) => {
+const ProfileAvatar = () => {
   const [showBadges, setShowBadges] = useState(false);
 
   const handleImageClick = () => {
@@ -58,7 +56,7 @@ export const AboutCard = () => (
       Hi, I'm Renuka
     </h2>
     <p className="about-desc-modern">
-      Full Stack Developer skilled in React, Node.js, Django, and cloud deployment. Experienced across the full development lifecycle, transforming complex ideas into clean, scalable, and production-ready web applications.
+      Full Stack Developer skilled in Django, React, Node.js, and cloud deployment. Experienced across the full development lifecycle, transforming complex ideas into clean, scalable, and production-ready web applications.
     </p>
     <a href="https://www.linkedin.com/in/renuka-dhoundiyal01/" target="_blank" rel="noopener noreferrer" className="link-pill-modern">
       <span className="link-pill-icon-modern">
@@ -89,7 +87,7 @@ export const ProfileCard = () => {
 
   return (
     <BentoCard className="col-span-2 row-span-2 profile-card-modern">
-      <ProfileAvatar avatarImg={avatarImg} />
+      <ProfileAvatar />
       <div className="contact-panel-modern">
         <h4 className="contact-panel-title-modern">Contact</h4>
         <ul className="contact-panel-list-modern">
@@ -146,7 +144,7 @@ export const SkillsCard = () => {
       title: "Backend",
       type: "backend",
       icon: <Server size={16} />,
-      skills: ["Node.js", "Express.js", "Django (Python)", "MongoDB"]
+      skills: ["Node.js", "Express.js", "Django (Python)"]
     },
     {
       title: "Databases",
@@ -171,7 +169,7 @@ export const SkillsCard = () => {
       </div>
 
       <div className="skills-grid" style={{ padding: '0 1rem 1rem' }}>
-        {categories.map((cat, idx) => (
+        {categories.map((cat) => (
           <div
             key={cat.type}
             className="skills-static-card"
@@ -290,7 +288,7 @@ export const ResumeLinksCard = () => (
       <h4 style={{ fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Find Me Online</h4>
       <div className="social-links-grid">
         <a href="https://github.com/Acasia01" target="_blank" rel="noopener noreferrer" className="social-link-btn" aria-label="GitHub"><Github size={20} /></a>
-        <a href="https://www.linkedin.com/in/renuka-dhoundiyal01/" target="_blank" rel="noopener noreferrer" className="social-link-btn" aria-label="LinkedIn"><LinkedIn size={20} /></a>
+        <a href="https://www.linkedin.com/in/renuka-dhoundiyal01/" target="_blank" rel="noopener noreferrer" className="social-link-btn" aria-label="LinkedIn"><Linkedin size={20} /></a>
         <a href="mailto:acasiadl01@gmail.com" className="social-link-btn" aria-label="Email"><Mail size={20} /></a>
       </div>
     </div>

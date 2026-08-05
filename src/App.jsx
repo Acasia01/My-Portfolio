@@ -19,6 +19,8 @@ export default function App() {
     const handleHashChange = () => {
       if (window.location.hash === '#all-projects') {
         setCurrentView('projects');
+      } else if (window.location.hash === '#about-me') {
+        setCurrentView('about');
       }
     };
 
@@ -33,9 +35,15 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateToAbout = () => {
+    setCurrentView('about');
+    window.location.hash = 'about-me';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navigateToHome = () => {
     setCurrentView('home');
-    if (window.location.hash === '#all-projects') {
+    if (window.location.hash === '#all-projects' || window.location.hash === '#about-me') {
       window.history.pushState("", document.title, window.location.pathname + window.location.search);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -46,10 +54,11 @@ export default function App() {
       <Header 
         currentView={currentView}
         onViewHome={navigateToHome}
+        onViewAbout={navigateToAbout}
         onViewProjects={navigateToProjects}
       />
       
-      {currentView === 'home' ? (
+      {currentView === 'home' && (
         <main className="bento-container">
           <AboutCard />
           <ProfileCard />
@@ -59,7 +68,25 @@ export default function App() {
           <EducationAndCertificationsCard />
           <ContactCard />
         </main>
-      ) : (
+      )}
+
+      {/* {currentView === 'about' && (
+        <main className="about-page-wrapper">
+          <AboutPage 
+            onViewHome={navigateToHome} 
+            onViewProjects={navigateToProjects} 
+            onViewContact={() => {
+              navigateToHome();
+              setTimeout(() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 150);
+            }}
+          />
+        </main>
+      )} */}
+
+      {currentView === 'projects' && (
         <main className="projects-page-wrapper">
           <ProjectsPage onViewHome={navigateToHome} />
         </main>

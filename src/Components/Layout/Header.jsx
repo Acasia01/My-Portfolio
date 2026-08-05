@@ -34,16 +34,44 @@ export default function Header({ currentView, onViewHome, onViewProjects }) {
         <nav>
           <ul className="nav-links">
             <li className="nav-item">
-              <a href="#about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}>About me</a>
+              <a 
+                href="#" 
+                className={currentView === 'home' ? 'active-nav-link' : ''}
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  onViewHome(); 
+                }}
+              >
+                Home
+              </a>
+            </li>
+            {/* <li className="nav-item">
+              <a 
+                href="#about-me" 
+                className={currentView === 'about' ? 'active-nav-link' : ''}
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  if (onViewAbout) onViewAbout();
+                  else handleNavClick('about'); 
+                }}
+              >
+                About me
+              </a>
+            </li> */}
+            <li className="nav-item">
+              <a 
+                href="#all-projects" 
+                className={currentView === 'projects' ? 'active-nav-link' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onViewProjects();
+                }}
+              >
+                Projects
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#all-projects" onClick={(e) => { 
-                e.preventDefault(); 
-                onViewProjects();
-              }}>Projects</a>
-            </li>
-            <li className="nav-item">
-              <a href="#work" onClick={(e) => { e.preventDefault(); handleNavClick('work'); }}>Work</a>
+              <a href="#work" onClick={(e) => { e.preventDefault(); handleNavClick('work'); }}>Experience</a>
             </li>
           </ul>
         </nav>

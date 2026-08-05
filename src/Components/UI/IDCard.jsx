@@ -6,8 +6,8 @@ const IDCard = () => {
   const velocityRef = useRef(0);
   const currentAngleRef = useRef(0);
   const targetAngleRef = useRef(0);
-  const lastScrollYRef = useRef(window.scrollY);
-  const lastTimeRef = useRef(performance.now());
+  const lastScrollYRef = useRef(0);
+  const lastTimeRef = useRef(0);
   const requestRef = useRef();
 
   useEffect(() => {
